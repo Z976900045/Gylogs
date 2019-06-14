@@ -1,0 +1,374 @@
+<!-- 博文的布局-Layout -->
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 引入head标签 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-sclable=0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="your web description" />
+<meta name="keywords" content="your web keywords, another keywords" />
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/media.css">
+<link rel="stylesheet" href="/assets/css/animate.min.css">
+<link rel="stylesheet" href="/assets/css/pygments/pygments_default.css">
+<link rel="stylesheet" href="/assets/css/github-markdown.css">
+<!-- SNS-icon -->
+<script src="//at.alicdn.com/t/font_856428_y9z6nq7zf5.js"></script>
+<!-- share.css -->
+<link rel="stylesheet" href="/assets/css/share.min.css">
+<!-- font -->
+<link rel="stylesheet" href="/assets/css/font.css">
+<!-- <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Pacifico|Ubuntu|Roboto+Mono|Source+Sans+Pro" rel="stylesheet"> -->
+
+<!-- Favicon -->
+<link href="/assets/profile.jpeg" rel="shortcut icon" />
+<link href="/assets/profile.jpeg" rel="apple-touch-icon-precomposed" />
+<!-- Android Lolipop Theme Color -->
+<!-- <meta name="theme-color" content="#1464FB"> -->
+<title>几个常用的javascript小技巧</title>
+<!-- 百度统计 -->
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- 谷歌分析 -->
+
+
+<!-- Android Lolipop Theme Color -->
+<meta name="theme-color" content=" rgb(0, 250, 154) ">
+</head>
+<body>
+
+<!-- 顶部锚点 -->
+<a id="htmlup" name="htmlup"></a>
+<!-- 引入博文顶部选项 -->
+
+<header id="post-header" style="background-color:rgb(0, 250, 154);">
+  <div class="top-center">
+      <div class="logo">
+          <a href="/" title="my awesome webtitle" style="color: white;">Miracle Home</a>
+      </div>
+      <nav class="top-nav">
+          <ul>
+              
+                <li><a href="/" style="color: white;">首页</a></li>
+              
+                <li><a href="/tags.html" style="color: white;">标签</a></li>
+              
+                <li><a href="/timeline.html" style="color: white;">时间线</a></li>
+              
+                <li><a href="/about.html" style="color: white;">关于我</a></li>
+              
+          </ul>
+      </nav>
+      <div id="top-boot">
+        <a href="javascript:;" id="boot1" style="display:block;" onclick="document.getElementById('boot-area').style.display='block';document.getElementById('boot1').style.display='none';document.getElementById('boot2').style.display='block';"><img src="/assets/boot_white.png" alt=""></a>
+        <a href="javascript:;" id="boot2" style="display: none;" onclick="document.getElementById('boot-area').style.display='none';document.getElementById('boot1').style.display='block';document.getElementById('boot2').style.display='none';"><img src="/assets/boot_white.png" alt=""></a>
+      </div>
+  </div>
+
+</header>
+
+
+<!-- 引入移动下拉选项 -->
+<div id="boot-area">
+    <ul>
+        
+          <a href="/"><li>首页</li></a>
+        
+          <a href="/tags.html"><li>标签</li></a>
+        
+          <a href="/timeline.html"><li>时间线</li></a>
+        
+          <a href="/about.html"><li>关于我</li></a>
+        
+    </ul>
+</div>
+
+<!-- 引入博文顶部样式 -->
+<!-- 版本一 垃圾 -->
+<!-- <div class="wow fadeIn top" data-wow-duration="3.5s" >
+    <span class="wow fadeInUp" data-wow-delay="0.2s">几个常用的javascript小技巧</span>
+    <span class="wow fadeInUp" data-wow-delay="0.4s"></span>
+    <span class="wow fadeInUp" data-wow-delay="0.4s"></span>
+    <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;true</span>
+</div> -->
+
+<!-- 版本二 可切换页面 -->
+
+<div class="post-top" style="background-color:rgb(0, 250, 154);">
+  <!-- 页面宽度大于800px -->
+  <div class="left-area">
+    
+      <a href="javascript:;" class="btn bounceInLeft animated" onmouseover="showLeft();this.style.color='rgb(0, 250, 154)';" onmouseout="goneLeft();this.style.color='rgba(0,0,0,.2)';"><</a>
+      <div id="left-tab" style="display:none;"><span class="left-san"></span><span class="left-main" style="color:rgb(0, 250, 154);"><sapn class="main">没有上一页咯</sapn></span></div>
+    
+  </div>
+  <div class="post-titlearea">
+    <span class="wow fadeInUp" data-wow-delay="0.2s">几个常用的javascript小技巧</span>
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.4s"></span> -->
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.4s"></span> -->
+    <!-- <span class="wow fadeInUp" data-wow-delay="0.6s">作者&nbsp;&nbsp;|&nbsp;&nbsp;true</span> -->
+  </div>
+  <div class="right-area">
+    
+      <a href="/2019/06/13/firstSubmit.html" class="btn bounceInRight self-animated" onmouseover="showRight();this.style.color='rgb(0, 250, 154)';" onmouseout="goneRight();this.style.color='rgba(0,0,0,.2)';">></a>
+      <div id="right-tab" style="display:none;"><span class="right-san"></span><span class="right-main" style="color:rgb(0, 250, 154);"><sapn class="main">第一次使用个人站!</sapn></span></div>
+    
+  </div>
+
+  <!-- 页面宽度小于800px -->
+  <div class="post-changearea">
+    
+      <a href="javascript:;" class="leftchange" style="border-right: 1px solid rgb(0, 250, 154);border-bottom: 2px solid rgb(0, 250, 154);"><span><br>没有上一篇咯</span></a>
+    
+    
+      <a href="/2019/06/13/firstSubmit.html" class="rightchange" style="border-left: 1px solid rgb(0, 250, 154);border-bottom: 2px solid rgb(0, 250, 154);"><span>下一篇<br><br>第一次使用个人站!</span></a>
+    
+  </div>
+</div>
+
+
+<div class="markdown-body fadeInUp animated">
+
+  
+    
+      <div class="postpage-subtitle" style="border-left: 8px solid rgb(0, 250, 154); border-right: 8px solid rgb(0, 250, 154)">
+        javascript小技巧
+      </div>
+    
+  
+
+  <!-- 文章内容 -->
+  <h2 id="1强制布尔值">1.强制布尔值</h2>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">const</span> <span class="n">myBoolran</span> <span class="o">=</span> <span class="o">!!</span> <span class="n">myVariable</span><span class="p">;</span>
+
+<span class="o">!!</span><span class="n">null</span> <span class="sr">//</span><span class="kp">false</span>
+
+<span class="o">!!</span><span class="n">undefined</span> <span class="sr">//</span><span class="kp">false</span>
+
+<span class="o">!!</span><span class="kp">false</span> <span class="sr">//</span><span class="kp">false</span>
+
+<span class="o">!!</span><span class="kp">true</span> <span class="sr">//</span><span class="kp">true</span>
+
+<span class="o">!!</span><span class="sr">//</span><span class="kp">false</span>
+
+<span class="o">!!</span><span class="s2">"string"</span> <span class="o">/</span><span class="sr">/true
+
+!!0 /</span><span class="o">/</span><span class="kp">false</span>
+
+<span class="o">!!</span><span class="mi">1</span> <span class="o">/</span><span class="sr">/true
+
+!!{} /</span><span class="o">/</span><span class="kp">true</span>
+
+<span class="o">!!</span><span class="p">[]</span> <span class="o">/</span><span class="sr">/true</span></code></pre></figure>
+
+<h2 id="2合并对象">2.合并对象</h2>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">const</span>  <span class="n">mergedObject</span> <span class="o">=</span> <span class="p">{</span> <span class="o">...</span><span class="n">objectOne</span><span class="p">,</span><span class="o">...</span><span class="n">objectTwo</span> <span class="p">};</span>
+
+<span class="n">const</span>  <span class="n">mergedObject</span>  <span class="o">=</span> <span class="p">{</span> <span class="o">...</span><span class="p">{</span><span class="nb">name</span><span class="ss">:'Jhon'</span><span class="p">,</span><span class="n">age</span><span class="ss">:'18'</span><span class="p">},</span><span class="o">...</span><span class="p">{</span><span class="n">name1</span><span class="ss">:'Jhon'</span><span class="p">,</span><span class="n">age1</span><span class="ss">:'19'</span><span class="p">}};</span>
+
+<span class="sr">//</span> <span class="p">{</span><span class="nb">name</span><span class="ss">:'Jhon'</span><span class="p">,</span><span class="n">age</span><span class="ss">:'18'</span><span class="p">,</span><span class="n">name1</span><span class="ss">:'Jhon1'</span><span class="p">,</span><span class="n">age</span><span class="ss">:'19'</span><span class="p">}</span></code></pre></figure>
+
+<p>支持无限制合并，但如果对象之间存在相同属性，那么后面的属性会覆盖前面的属性。<font color="red">*请注意，这仅适用于浅层合并。</font></p>
+
+<h2 id="3交换变量">3.交换变量</h2>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">[</span><span class="n">varA</span><span class="p">,</span><span class="n">varB</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">varB</span><span class="p">,</span><span class="n">varA</span><span class="p">];</span>
+<span class="n">let</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">let</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">]</span> <span class="o">/</span><span class="sr">/ a = 2 b = 1</span></code></pre></figure>
+
+<h2 id="4删除boolean为false值">4.删除Boolean为false值</h2>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">const</span> <span class="n">clean</span> <span class="o">=</span> <span class="n">dirty</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="no">Boolean</span><span class="p">);</span>
+
+ <span class="n">const</span> <span class="n">clean</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="kp">false</span><span class="p">,</span> <span class="kp">true</span><span class="p">,</span> <span class="n">undefined</span><span class="p">,</span> <span class="n">null</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">].</span><span class="nf">filter</span><span class="p">(</span><span class="no">Boolean</span><span class="p">);</span>
+
+ <span class="sr">//</span> <span class="p">[</span><span class="kp">true</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span></code></pre></figure>
+
+<h2 id="5转换元素类型">5.转换元素类型</h2>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">const</span> <span class="n">stringArray</span> <span class="o">=</span> <span class="n">numberArray</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="no">String</span><span class="p">);</span>
+<span class="n">const</span> <span class="n">stringArray</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nf">map</span><span class="p">(</span><span class="no">String</span><span class="p">);</span>
+<span class="p">[</span><span class="s2">"1"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"3"</span><span class="p">]</span></code></pre></figure>
+
+<p>如果数组包含字符串，字符串原样保留。 这也可以用于将String元素转换为Number类型：</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">const</span> <span class="n">numberArray</span> <span class="o">=</span> <span class="n">stringArray</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="no">Number</span><span class="p">);</span>
+<span class="n">const</span> <span class="n">stringArray</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"1"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"3"</span><span class="p">].</span><span class="nf">map</span><span class="p">(</span><span class="no">String</span><span class="p">);</span>
+<span class="sr">//</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span></code></pre></figure>
+
+<h2 id="6随机生成六位数字验证码">6.随机生成六位数字验证码</h2>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">const</span> <span class="n">code</span> <span class="o">=</span> <span class="no">Math</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="no">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000000</span><span class="p">).</span><span class="nf">toString</span><span class="p">().</span><span class="nf">padStart</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s2">"0"</span><span class="p">);</span>
+<span class="sr">//</span> <span class="mi">942377</span></code></pre></figure>
+
+<h2 id="7身份证正则">7.身份证正则</h2>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">const</span> <span class="no">IDReg</span><span class="o">=</span> <span class="sr">/(^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$)|(^[1-9]\d{5}\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{2}[0-9Xx]$)/</span><span class="p">;</span></code></pre></figure>
+
+<h2 id="8将数字转化为千分位格式">8.将数字转化为千分位格式</h2>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">const</span> <span class="n">toDecimalMark</span> <span class="o">=</span> <span class="n">num</span> <span class="o">=&gt;</span> <span class="n">num</span><span class="p">.</span><span class="nf">toLocaleString</span><span class="p">(</span><span class="s1">'en-US'</span><span class="p">);</span>
+<span class="n">toDecimalMark</span><span class="p">(</span><span class="mf">12305030388.9087</span><span class="p">);</span> <span class="sr">//</span> <span class="s2">"12,305,030,388.909"</span></code></pre></figure>
+
+<h2 id="9获取两个日期的相差天数">9.获取两个日期的相差天数</h2>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">const</span> <span class="n">getDaysDiffBetweenDates</span> <span class="o">=</span> <span class="p">(</span><span class="n">dateInitial</span><span class="p">,</span> <span class="n">dateFinal</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="n">dateFinal</span> <span class="o">-</span> <span class="n">dateInitial</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1000</span> <span class="o">*</span> <span class="mi">3600</span> <span class="o">*</span> <span class="mi">24</span><span class="p">);</span>
+<span class="n">getDaysDiffBetweenDates</span><span class="p">(</span><span class="n">new</span> <span class="no">Date</span><span class="p">(</span><span class="s1">'2017-12-13'</span><span class="p">),</span> <span class="n">new</span> <span class="no">Date</span><span class="p">(</span><span class="s1">'2017-12-22'</span><span class="p">));</span> <span class="sr">//</span> <span class="mi">9</span></code></pre></figure>
+
+<h2 id="10数组去重">10.数组去重</h2>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">const</span> <span class="n">deDupe</span> <span class="o">=</span> <span class="p">(</span><span class="n">myArray</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="o">...</span> <span class="n">new</span> <span class="no">Set</span><span class="p">(</span><span class="n">myArray</span><span class="p">)];</span>
+<span class="n">deDupe</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="sr">//</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span></code></pre></figure>
+
+<h2 id="11过滤对象数组">11.过滤对象数组</h2>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">const</span> <span class="n">reducedFilter</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">fn</span><span class="p">)</span> <span class="o">=&gt;</span><span class="n">data</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">fn</span><span class="p">).</span><span class="nf">map</span><span class="p">(</span><span class="n">el</span> <span class="o">=&gt;</span><span class="n">keys</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="n">acc</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="n">acc</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span><span class="n">el</span><span class="p">[</span><span class="n">key</span><span class="p">];</span><span class="k">return</span> <span class="n">acc</span><span class="p">;},</span> <span class="p">{}));</span>
+<span class="n">const</span> <span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="ss">id: </span><span class="mi">1</span><span class="p">,</span>
+    <span class="ss">name: </span><span class="s1">'john'</span><span class="p">,</span>
+    <span class="ss">age: </span><span class="mi">24</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="ss">id: </span><span class="mi">2</span><span class="p">,</span>
+    <span class="ss">name: </span><span class="s1">'mike'</span><span class="p">,</span>
+    <span class="ss">age: </span><span class="mi">50</span>
+  <span class="p">}</span>
+<span class="p">];</span>
+
+<span class="n">let</span> <span class="n">a</span> <span class="o">=</span> <span class="n">reducedFilter</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">[</span><span class="s1">'id'</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">],</span> <span class="n">item</span> <span class="o">=&gt;</span> <span class="n">item</span><span class="p">.</span><span class="nf">age</span> <span class="o">&gt;</span> <span class="mi">24</span><span class="p">);</span> <span class="sr">//</span> <span class="p">[{</span> <span class="ss">id: </span><span class="mi">2</span><span class="p">,</span> <span class="ss">name: </span><span class="s1">'mike'</span><span class="p">}]</span></code></pre></figure>
+
+  <!-- 引入share模块 -->
+  
+  <div class="social-share-wrapper">
+    <div class="social-share"></div>
+  </div>
+
+
+<!-- share.js -->
+<script src="/assets/js/social-share.min.js"></script>
+<script>
+  socialShare('.social-share', {
+    sites: [
+      
+        'qq'
+        ,
+        
+      
+        'wechat'
+        ,
+        
+      
+        'weibo'
+        ,
+        
+      
+        'twitter'
+        ,
+        
+      
+        'facebook'
+        
+      
+    ],
+    wechatQrcodeTitle: "分享到微信朋友圈",
+    wechatQrcodeHelper: '期待在朋友圈见到这篇文章'
+  });
+</script>
+
+</div>
+
+<!-- 底部锚点 -->
+<a id="htmldown" name="htmldown"></a>
+<!-- 引入评论模块 -->
+
+
+
+    <section class="post-footer-item comment">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNDI2OS8xMDgwNg=="></div>
+    </section>
+
+    <!-- 来必力City版安装代码 -->
+    <script type="text/javascript">
+       (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
+
+           if (typeof LivereTower === 'function') { return; }
+
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           e.parentNode.insertBefore(j, e);
+       })(document, 'script');
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    <!-- City版安装代码已完成 -->
+
+
+
+
+
+<!-- 引入goto模块 -->
+<div class="bounceInRight animated go">
+  <a title="顶部切换页面" class="gototop" href="#htmlup" target="_self">
+    <div class="box" style="font-family:'ffad_matroregular';">
+        Top
+    </div>
+  </a>
+  <a title="底部有livere评论哦" class="gotobottom" href="#htmldown" target="_self">
+    <div class="box" style="font-family:'ffad_matroregular';">
+        Foot
+    </div>
+  </a>
+</div>
+
+<!-- 引入页面底部模块 -->
+<footer id="bottom">
+  <br>
+  <span>Miracle ©
+  
+  
+  2019
+  <br>
+ 
+</footer>
+
+
+<!-- 引用wow.js的动画效果 -->
+<script src="/assets/js/wow.js"></script>
+<script>
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        // offset: 600,
+        mobile: true,
+        live: true
+    });
+    wow.init();
+</script>
+<!-- 页面刷新回到顶部 -->
+<script>
+    window.onbeforeunload = function(){
+        //刷新后页面自动回到顶部
+        document.documentElement.scrollTop = 0;  //ie下
+        document.body.scrollTop = 0;  //非ie
+    }
+</script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
